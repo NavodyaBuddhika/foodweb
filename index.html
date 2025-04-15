@@ -1,521 +1,561 @@
-</button>
-</div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBar - Healthy Eating & Nutrition</title>
+    <meta name="description" content="Fresh, organic meals delivered to your door. Explore our menu of nutritionist-approved healthy options.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+        }
+        
+        .menu-item:hover .menu-img {
+            transform: scale(1.05);
+        }
+        
+        .menu-img {
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .category-card {
+            transition: all 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .custom-shape-divider {
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .custom-shape-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 70px;
+        }
+        
+        .custom-shape-divider .shape-fill {
+            fill: #FFFFFF;
+        }
+        
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #ef4444;
+            color: white;
+            border-radius: 9999px;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .filter-grayscale {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-grayscale:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @media (max-width: 640px) {
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                width: 100%;
+                z-index: 40;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            
+            .mobile-menu.active {
+                transform: translateX(0%);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Announcement Banner -->
+    <div class="bg-primary-600 text-white text-center py-2 text-sm font-medium">
+        <div class="container mx-auto px-4">
+            <p>🎉 New Customer Offer: Get 20% off your first order with code <span class="font-bold">WELCOME20</span></p>
+        </div>
+    </div>
 
-<!-- Menu Item 6 -->
-<div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow menu-item">
-<div class="relative mb-4 overflow-hidden rounded-lg">
-    <div class="bg-gray-200 h-48 rounded-lg menu-img flex items-center justify-center">
-        <span class="text-gray-400">Energy Bites Image</span>
-    </div>
-</div>
-<div class="flex items-center justify-between mb-2">
-    <h4 class="text-xl font-semibold">Chocolate Energy Bites</h4>
-    <div class="flex text-yellow-400">
-        <i class="fas fa-star"></i>
-        <span class="text-gray-700 ml-1">4.7</span>
-    </div>
-</div>
-<p class="text-gray-600 mb-4">Dates, cacao, almond butter, chia seeds, hemp protein, coconut flakes</p>
-<div class="flex justify-between items-center">
-    <div>
-        <span class="text-2xl font-bold text-primary-600">$6.99</span>
-    </div>
-    <button class="bg-primary-500 text-white p-3 rounded-full hover:bg-primary-600 transition-colors">
-        <i class="fas fa-plus"></i>
-    </button>
-</div>
-</div>
-</div>
-
-<div class="text-center mt-12">
-<button class="border-2 border-primary-500 text-primary-600 px-8 py-3 rounded-full hover:bg-primary-50 transition-colors font-medium">
-View Full Menu
-</button>
-</div>
-</div>
-</section>
-
-<!-- About Section -->
-<section id="about" class="py-20 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="md:flex items-center">
-<div class="md:w-1/2 mb-10 md:mb-0">
-<div class="relative">
-    <div class="bg-gray-200 h-96 rounded-2xl flex items-center justify-center">
-        <span class="text-gray-400">Chef Image</span>
-    </div>
-    <div class="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl shadow-lg max-w-xs">
-        <div class="flex items-center space-x-4 mb-4">
-            <div class="bg-primary-100 p-3 rounded-full">
-                <span class="text-primary-600 text-xl">
-                    <i class="fas fa-award"></i>
-                </span>
-            </div>
-            <div>
-                <h4 class="font-semibold">Quality Food</h4>
-                <p class="text-sm text-gray-600">Only fresh ingredients</p>
+    <!-- Navigation -->
+    <nav class="bg-white/90 shadow-lg sticky-nav">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="flex items-center space-x-2">
+                        <span class="text-3xl text-primary-600">
+                            <i class="fas fa-leaf"></i>
+                        </span>
+                        <h1 class="text-2xl font-bold text-primary-600">FOODBAR</h1>
+                    </a>
+                    <div class="hidden lg:flex space-x-8 ml-10">
+                        <a href="#home" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Home</a>
+                        <a href="#menu" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Menu</a>
+                        <a href="#about" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">About</a>
+                        <a href="#how-it-works" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">How It Works</a>
+                        <a href="#testimonials" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Testimonials</a>
+                        <a href="#faq" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">FAQ</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-4">
+                        <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors">
+                            <span class="relative">
+                                <i class="fas fa-shopping-cart text-xl"></i>
+                                <span class="badge">3</span>
+                            </span>
+                        </a>
+                        <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors">
+                            <i class="fas fa-user text-xl"></i>
+                        </a>
+                        <button class="bg-primary-500 text-white px-6 py-2 rounded-full hover:bg-primary-600 transition-all shadow-md hover:shadow-lg">
+                            Sign Up
+                        </button>
+                    </div>
+                    <button id="mobile-menu-button" class="lg:hidden text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="flex items-center space-x-4">
-            <div class="bg-primary-100 p-3 rounded-full">
-                <span class="text-primary-600 text-xl">
-                    <i class="fas fa-leaf"></i>
-                </span>
-            </div>
-            <div>
-                <h4 class="font-semibold">100% Organic</h4>
-                <p class="text-sm text-gray-600">Certified organic meals</p>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu bg-white/95 lg:hidden">
+            <div class="container mx-auto px-4 py-8">
+                <div class="flex justify-end mb-8">
+                    <button id="mobile-menu-close" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col space-y-6 items-center text-xl">
+                    <a href="#home" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Home</a>
+                    <a href="#menu" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Menu</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">About</a>
+                    <a href="#how-it-works" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">How It Works</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Testimonials</a>
+                    <a href="#faq" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">FAQ</a>
+                    <div class="flex items-center space-x-6 mt-6">
+                        <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors">
+                            <span class="relative">
+                                <i class="fas fa-shopping-cart text-2xl"></i>
+                                <span class="badge">3</span>
+                            </span>
+                        </a>
+                        <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors">
+                            <i class="fas fa-user text-2xl"></i>
+                        </a>
+                    </div>
+                    <button class="bg-primary-500 text-white px-8 py-3 rounded-full hover:bg-primary-600 transition-all shadow-md hover:shadow-lg w-full mt-4">
+                        Sign Up
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-</div>
-<div class="md:w-1/2 md:pl-12">
-<span class="inline-block bg-primary-100 text-primary-700 px-4 py-1 rounded-full text-sm font-medium mb-4">About Us</span>
-<h3 class="text-3xl font-bold mb-6">We Create Healthy & Nutritious Meals For Busy People</h3>
-<p class="text-gray-600 mb-6">
-    At FoodBar, we believe that eating well shouldn't be complicated or time-consuming. Our mission is to make healthy eating accessible and enjoyable for everyone, regardless of how busy your lifestyle may be.
-</p>
-<p class="text-gray-600 mb-6">
-    Our team of expert nutritionists and chefs work together to create delicious, balanced meals using only the freshest organic ingredients. Every dish is carefully portioned and nutritionally balanced to fuel your body and mind.
-</p>
-<div class="grid grid-cols-2 gap-6 mb-8">
-    <div class="flex items-center space-x-3">
-        <i class="fas fa-check-circle text-primary-500"></i>
-        <span class="text-gray-700">Nutritionist Approved</span>
-    </div>
-    <div class="flex items-center space-x-3">
-        <i class="fas fa-check-circle text-primary-500"></i>
-        <span class="text-gray-700">Gluten-Free Options</span>
-    </div>
-    <div class="flex items-center space-x-3">
-        <i class="fas fa-check-circle text-primary-500"></i>
-        <span class="text-gray-700">Fresh Ingredients</span>
-    </div>
-    <div class="flex items-center space-x-3">
-        <i class="fas fa-check-circle text-primary-500"></i>
-        <span class="text-gray-700">Eco-Friendly Packaging</span>
-    </div>
-</div>
-<button class="bg-primary-500 text-white px-8 py-3 rounded-full hover:bg-primary-600 transition-all shadow-md hover:shadow-lg">
-    Learn More
-</button>
-</div>
-</div>
-</div>
-</section>
+    </nav>
 
-<!-- How It Works -->
-<section id="how-it-works" class="py-20 bg-white">
-<div class="container mx-auto px-4">
-<div class="text-center max-w-2xl mx-auto mb-16">
-<span class="inline-block bg-primary-100 text-primary-700 px-4 py-1 rounded-full text-sm font-medium mb-4">How It Works</span>
-<h3 class="text-3xl font-bold mb-4">Easy Steps to Get Your Healthy Meals</h3>
-<p class="text-gray-600">
-We've made our process simple and convenient. Just follow these easy steps to get nutritious meals delivered to your door.
-</p>
-</div>
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient py-20 md:py-32">
+        <div class="container mx-auto px-4 md:flex items-center">
+            <div class="md:w-1/2 md:pr-12 animate-slide-up">
+                <span class="inline-block bg-primary-100 text-primary-700 px-4 py-1 rounded-full text-sm font-medium mb-4">Healthy & Organic Food</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">Delicious <span class="text-primary-600">Healthy</span> Meals Delivered to You</h2>
+                <p class="text-gray-700 mb-8 text-lg">
+                    Our chef-created recipes are packed with fresh ingredients and nutritionally balanced. Perfect for busy people who want to eat well without the hassle.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <button class="bg-primary-500 text-white px-8 py-3 rounded-full hover:bg-primary-600 transition-all shadow-md hover:shadow-lg w-full sm:w-auto text-lg font-medium">
+                        Order Now
+                    </button>
+                    <a href="#menu" class="flex items-center space-x-2 text-primary-600 hover:text-primary-700 transition-colors w-full sm:w-auto justify-center">
+                        <span>View Menu</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-8 mt-10">
+                    <div class="flex flex-col items-center">
+                        <span class="text-3xl font-bold text-primary-600">4.9</span>
+                        <div class="flex text-yellow-400 my-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm">2000+ Reviews</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-3xl font-bold text-primary-600">30k+</span>
+                        <span class="text-gray-600 text-sm">Happy Customers</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-3xl font-bold text-primary-600">100%</span>
+                        <span class="text-gray-600 text-sm">Organic</span>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-12 md:mt-0 relative">
+                <div class="float-animation">
+                    <div class="bg-gray-200 h-96 rounded-2xl flex items-center justify-center overflow-hidden relative">
+                        <span class="text-gray-400">Healthy Salad Image</span>
+                        <div class="absolute -bottom-10 -right-10 bg-white p-4 rounded-xl shadow-lg">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-3xl font-bold text-primary-600">$14.99</span>
+                                <span class="text-gray-500 line-through">$19.99</span>
+                            </div>
+                            <p class="text-gray-600">Mediterranean Salad</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute -bottom-8 -left-8 bg-white p-4 rounded-full shadow-lg h-24 w-24 flex items-center justify-center">
+                    <div class="text-center">
+                        <span class="block text-primary-600 font-bold">30min</span>
+                        <span class="text-gray-600 text-sm">Delivery</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="grid md:grid-cols-3 gap-10">
-<div class="text-center">
-<div class="bg-primary-50 h-24 w-24 rounded-full flex items-center justify-center mx-auto mb-6">
-    <span class="text-primary-600 text-3xl">
-        <i class="fas fa-mouse-pointer"></i>
-    </span>
-</div>
-<h4 class="text-xl font-semibold mb-4">Choose Your Meals</h4>
-<p class="text-gray-600">
-    Browse our extensive menu and select the meals that fit your dietary preferences and goals.
-</p>
-</div>
+    <!-- Trusted By Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-center text-gray-500 text-sm font-medium uppercase tracking-wider mb-8">Trusted by 100+ Companies</h3>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <img src="/api/placeholder/120/40" alt="Company Logo" class="h-8 filter-grayscale">
+                <img src="/api/placeholder/120/40" alt="Company Logo" class="h-8 filter-grayscale">
+                <img src="/api/placeholder/120/40" alt="Company Logo" class="h-8 filter-grayscale">
+                <img src="/api/placeholder/120/40" alt="Company Logo" class="h-8 filter-grayscale">
+                <img src="/api/placeholder/120/40" alt="Company Logo" class="h-8 filter-grayscale">
+            </div>
+        </div>
+    </section>
 
-<div class="text-center">
-<div class="bg-primary-50 h-24 w-24 rounded-full flex items-center justify-center mx-auto mb-6">
-    <span class="text-primary-600 text-3xl">
-        <i class="fas fa-truck"></i>
-    </span>
-</div>
-<h4 class="text-xl font-semibold mb-4">We Deliver to You</h4>
-<p class="text-gray-600">
-    Our team prepares your meals fresh and delivers them straight to your doorstep on your scheduled day.
-</p>
-</div>
+    <!-- Categories Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="inline-block bg-primary-100 text-primary-700 px-4 py-1 rounded-full text-sm font-medium mb-4">Our Categories</span>
+                <h3 class="text-3xl font-bold mb-4">Explore Our Food Categories</h3>
+                <p class="text-gray-600">
+                    We offer a wide variety of delicious and nutritious meals to satisfy all your cravings while keeping your diet on track.
+                </p>
+            </div>
+            
+            <div class="flex overflow-x-auto scrollbar-hide pb-6 space-x-6">
+                <div class="category-card flex-shrink-0 w-64 h-48 bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative h-full">
+                        <div class="bg-gray-200 h-full flex items-center justify-center">
+                            <span class="text-gray-400">Salad Image</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div class="text-white">
+                                <h4 class="text-xl font-semibold">Salads</h4>
+                                <p class="text-sm opacity-80">12 Items</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-card flex-shrink-0 w-64 h-48 bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative h-full">
+                        <div class="bg-gray-200 h-full flex items-center justify-center">
+                            <span class="text-gray-400">Protein Bowls Image</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div class="text-white">
+                                <h4 class="text-xl font-semibold">Protein Bowls</h4>
+                                <p class="text-sm opacity-80">8 Items</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-card flex-shrink-0 w-64 h-48 bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative h-full">
+                        <div class="bg-gray-200 h-full flex items-center justify-center">
+                            <span class="text-gray-400">Smoothies Image</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div class="text-white">
+                                <h4 class="text-xl font-semibold">Smoothies</h4>
+                                <p class="text-sm opacity-80">10 Items</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-card flex-shrink-0 w-64 h-48 bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative h-full">
+                        <div class="bg-gray-200 h-full flex items-center justify-center">
+                            <span class="text-gray-400">Desserts Image</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div class="text-white">
+                                <h4 class="text-xl font-semibold">Healthy Desserts</h4>
+                                <p class="text-sm opacity-80">6 Items</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-card flex-shrink-0 w-64 h-48 bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative h-full">
+                        <div class="bg-gray-200 h-full flex items-center justify-center">
+                            <span class="text-gray-400">Drinks Image</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div class="text-white">
+                                <h4 class="text-xl font-semibold">Drinks</h4>
+                                <p class="text-sm opacity-80">5 Items</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="text-center">
-<div class="bg-primary-50 h-24 w-24 rounded-full flex items-center justify-center mx-auto mb-6">
-    <span class="text-primary-600 text-3xl">
-        <i class="fas fa-utensils"></i>
-    </span>
-</div>
-<h4 class="text-xl font-semibold mb-4">Heat & Enjoy</h4>
-<p class="text-gray-600">
-    Simply heat your meals whenever you're ready to eat and enjoy nutritious food in minutes.
-</p>
-</div>
-</div>
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="inline-block bg-primary-100 text-primary-700 px-4 py-1 rounded-full text-sm font-medium mb-4">Our Menu</span>
+                <h3 class="text-3xl font-bold mb-4">Popular Dishes</h3>
+                <p class="text-gray-600">
+                    Explore our chef-created menu featuring fresh, organic ingredients and balanced nutrition to fuel your day.
+                </p>
+            </div>
+            
+            <div class="mb-8 flex flex-wrap justify-center gap-4">
+                <button class="bg-primary-500 text-white px-6 py-2 rounded-full">All</button>
+                <button class="bg-gray-100 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-200 transition-colors">Breakfast</button>
+                <button class="bg-gray-100 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-200 transition-colors">Lunch</button>
+                <button class="bg-gray-100 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-200 transition-colors">Dinner</button>
+                <button class="bg-gray-100 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-200 transition-colors">Drinks</button>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Menu Item 1 -->
+                <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow menu-item">
+                    <div class="relative mb-4 overflow-hidden rounded-lg">
+                        <div class="bg-gray-200 h-48 rounded-lg menu-img flex items-center justify-center">
+                            <span class="text-gray-400">Avocado Salad Image</span>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-full">POPULAR</span>
+                    </div>
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="text-xl font-semibold">Avocado Protein Salad</h4>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span class="text-gray-700 ml-1">4.9</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Fresh avocado, quinoa, mixed greens, cherry tomatoes with lemon vinaigrette</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-2xl font-bold text-primary-600">$12.99</span>
+                            <span class="text-gray-500 line-through ml-2">$15.99</span>
+                        </div>
+                        <button class="bg-primary-500 text-white p-3 rounded-full hover:bg-primary-600 transition-colors">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
 
-<div class="text-center mt-16">
-<button class="bg-primary-500 text-white px-8 py-3 rounded-full hover:bg-primary-600 transition-all shadow-md hover:shadow-lg">
-Get Started Now
-</button>
-</div>
-</div>
-</section>
+                <!-- Menu Item 2 -->
+                <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow menu-item">
+                    <div class="relative mb-4 overflow-hidden rounded-lg">
+                        <div class="bg-gray-200 h-48 rounded-lg menu-img flex items-center justify-center">
+                            <span class="text-gray-400">Chicken Bowl Image</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="text-xl font-semibold">Grilled Chicken Bowl</h4>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span class="text-gray-700 ml-1">4.7</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Grilled antibiotic-free chicken, brown rice, roasted vegetables, tahini sauce</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-2xl font-bold text-primary-600">$14.99</span>
+                        </div>
+                        <button class="bg-primary-500 text-white p-3 rounded-full hover:bg-primary-600 transition-colors">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
 
-<!-- Testimonials -->
-<section id="testimonials" class="py-20 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center max-w-2xl mx-auto mb-16">
-<span class="inline-block bg-primary-100 text-primary-700 px-4 py-1 rounded-full text-sm font-medium mb-4">Testimonials</span>
-<h3 class="text-3xl font-bold mb-4">What Our Customers Say</h3>
-<p class="text-gray-600">
-Don't just take our word for it. See what our happy customers have to say about our healthy meal delivery service.
-</p>
-</div>
+                <!-- Menu Item 3 -->
+                <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow menu-item">
+                    <div class="relative mb-4 overflow-hidden rounded-lg">
+                        <div class="bg-gray-200 h-48 rounded-lg menu-img flex items-center justify-center">
+                            <span class="text-gray-400">Veggie Noodles Image</span>
+                        </div>
+                        <span class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">HOT</span>
+                    </div>
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="text-xl font-semibold">Vegetable Noodle Stir-Fry</h4>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span class="text-gray-700 ml-1">4.8</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Zucchini noodles, seasonal vegetables, toasted cashews, ginger-tamari sauce</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-2xl font-bold text-primary-600">$13.49</span>
+                        </div>
+                        <button class="bg-primary-500 text-white p-3 rounded-full hover:bg-primary-600 transition-colors">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow testimonial-card">
-<div class="flex text-yellow-400 mb-4">
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-</div>
-<p class="text-gray-600 mb-6">
-    "FoodBar has completely transformed my weekday meals. The food is delicious, portions are perfect, and I love knowing I'm eating nutritious meals even on my busiest days."
-</p>
-<div class="flex items-center">
-    <div class="bg-gray-200 h-12 w-12 rounded-full flex items-center justify-center mr-4">
-        <span class="text-gray-400 text-xs">Photo</span>
-    </div>
-    <div>
-        <h5 class="font-semibold">Sarah Johnson</h5>
-        <p class="text-gray-500 text-sm">Marketing Professional</p>
-    </div>
-</div>
-</div>
+                <!-- Menu Item 4 -->
+                <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow menu-item">
+                    <div class="relative mb-4 overflow-hidden rounded-lg">
+                        <div class="bg-gray-200 h-48 rounded-lg menu-img flex items-center justify-center">
+                            <span class="text-gray-400">Berry Smoothie Image</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="text-xl font-semibold">Berry Protein Smoothie</h4>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span class="text-gray-700 ml-1">4.6</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Mixed berries, banana, plant protein, almond milk, chia seeds</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-2xl font-bold text-primary-600">$8.99</span>
+                        </div>
+                        <button class="bg-primary-500 text-white p-3 rounded-full hover:bg-primary-600 transition-colors">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
 
-<div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow testimonial-card">
-<div class="flex text-yellow-400 mb-4">
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-</div>
-<p class="text-gray-600 mb-6">
-    "As someone who's always watching what I eat, FoodBar has been a game-changer. The meals are not only healthy but also tasty, and the nutritional information makes tracking my intake easy."
-</p>
-<div class="flex items-center">
-    <div class="bg-gray-200 h-12 w-12 rounded-full flex items-center justify-center mr-4">
-        <span class="text-gray-400 text-xs">Photo</span>
-    </div>
-    <div>
-        <h5 class="font-semibold">Michael Taylor</h5>
-        <p class="text-gray-500 text-sm">Fitness Trainer</p>
-    </div>
-</div>
-</div>
-
-<div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow testimonial-card">
-<div class="flex text-yellow-400 mb-4">
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star"></i>
-    <i class="fas fa-star-half-alt"></i>
-</div>
-<p class="text-gray-600 mb-6">
-    "I've tried several meal delivery services, and FoodBar stands out for the quality of ingredients and thoughtful recipes. Everything tastes fresh, and the variety keeps me from getting bored."
-</p>
-<div class="flex items-center">
-    <div class="bg-gray-200 h-12 w-12 rounded-full flex items-center justify-center mr-4">
-        <span class="text-gray-400 text-xs">Photo</span>
-    </div>
-    <div>
-        <h5 class="font-semibold">Alexis Rodriguez</h5>
-        <p class="text-gray-500 text-sm">Software Engineer</p>
-    </div>
-</div>
-</div>
-</div>
-
-<div class="text-center mt-12">
-<a href="#" class="text-primary-600 hover:text-primary-700 font-medium">
-Read More Testimonials <i class="fas fa-arrow-right ml-2"></i>
-</a>
-</div>
-</div>
-</section>
-
-<!-- FAQ Section -->
-<section id="faq" class="py-20 bg-white">
-<div class="container mx-auto px-4">
-<div class="text-center max-w-2xl mx-auto mb-16">
-<span class="inline-block bg-primary-100 text-primary-700 px-4 py-1 rounded-full text-sm font-medium mb-4">FAQ</span>
-<h3 class="text-3xl font-bold mb-4">Frequently Asked Questions</h3>
-<p class="text-gray-600">
-Find answers to commonly asked questions about our meal delivery service.
-</p>
-</div>
-
-<div class="max-w-3xl mx-auto">
-<div class="mb-6">
-<div class="flex justify-between items-center bg-gray-50 p-4 rounded-lg cursor-pointer">
-    <h4 class="font-semibold">How does the meal delivery process work?</h4>
-    <span class="text-primary-600"><i class="fas fa-plus"></i></span>
-</div>
-<div class="bg-white p-6 rounded-b-lg shadow-md">
-    <p class="text-gray-600">
-        Our meal delivery process is simple. You select your meals from our weekly menu, choose your delivery day, and we'll deliver your fresh, pre-portioned meals straight to your door in eco-friendly, insulated packaging that keeps everything at the proper temperature.
-    </p>
-</div>
-</div>
-
-<div class="mb-6">
-<div class="flex justify-between items-center bg-gray-50 p-4 rounded-lg cursor-pointer">
-    <h4 class="font-semibold">Are the meals fresh or frozen?</h4>
-    <span class="text-primary-600"><i class="fas fa-plus"></i></span>
-</div>
-<div class="hidden bg-white p-6 rounded-b-lg shadow-md">
-    <p class="text-gray-600">
-        All our meals are prepared fresh using locally-sourced ingredients whenever possible. They're delivered fresh, not frozen, and are designed to stay fresh in your refrigerator for up to 5 days.
-    </p>
-</div>
-</div>
-
-<div class="mb-6">
-<div class="flex justify-between items-center bg-gray-50 p-4 rounded-lg cursor-pointer">
-    <h4 class="font-semibold">How do I heat the meals?</h4>
-    <span class="text-primary-600"><i class="fas fa-plus"></i></span>
-</div>
-<div class="hidden bg-white p-6 rounded-b-lg shadow-md">
-    <p class="text-gray-600">
-        Our meals come in microwave-safe containers and can be heated in 2-3 minutes. Detailed heating instructions are included with each delivery, and some meals can also be heated in a conventional oven if you prefer.
-    </p>
-</div>
-</div>
-
-<div class="mb-6">
-<div class="flex justify-between items-center bg-gray-50 p-4 rounded-lg cursor-pointer">
-    <h4 class="font-semibold">Can I customize my meals for dietary restrictions?</h4>
-    <span class="text-primary-600"><i class="fas fa-plus"></i></span>
-</div>
-<div class="hidden bg-white p-6 rounded-b-lg shadow-md">
-    <p class="text-gray-600">
-        Yes! We offer a variety of options for different dietary needs including vegetarian, vegan, gluten-free, dairy-free, low-carb, and more. You can set your dietary preferences in your account, and our menu will filter to show you compatible meals.
-    </p>
-</div>
-</div>
-
-<div class="mb-6">
-<div class="flex justify-between items-center bg-gray-50 p-4 rounded-lg cursor-pointer">
-    <h4 class="font-semibold">What is your cancellation policy?</h4>
-    <span class="text-primary-600"><i class="fas fa-plus"></i></span>
-</div>
-<div class="hidden bg-white p-6 rounded-b-lg shadow-md">
-    <p class="text-gray-600">
-        You can pause or cancel your subscription at any time before your weekly cutoff date (typically 5 days before delivery). There are no cancellation fees or long-term commitments.
-    </p>
-</div>
-</div>
-</div>
-
-<div class="text-center mt-12">
-<button class="bg-primary-500 text-white px-8 py-3 rounded-full hover:bg-primary-600 transition-all shadow-md hover:shadow-lg">
-Contact Support
-</button>
-</div>
-</div>
-</section>
-
-<!-- CTA Section -->
-<section class="py-20 bg-primary-500 relative overflow-hidden">
-<div class="container mx-auto px-4 relative z-10">
-<div class="md:flex items-center justify-between">
-<div class="md:w-1/2 mb-10 md:mb-0">
-<h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Start Eating Healthy?</h3>
-<p class="text-white/90 mb-8 text-lg">
-    Sign up today and get 20% off your first week of meals. No commitment required.
-</p>
-<div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-    <button class="bg-white text-primary-600 px-8 py-3 rounded-full hover:bg-gray-100 transition-all shadow-md hover:shadow-lg font-medium">
-        Get Started
-    </button>
-    <button class="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-primary-600 transition-all">
-        View Meal Plans
-    </button>
-</div>
-</div>
-<div class="md:w-1/2 md:pl-12">
-<div class="bg-white p-8 rounded-xl shadow-lg">
-    <h4 class="text-2xl font-semibold mb-6">Subscribe to Our Newsletter</h4>
-    <p class="text-gray-600 mb-6">
-        Get healthy recipes, nutrition tips, and exclusive offers delivered to your inbox.
-    </p>
-    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0">
-        <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 sm:rounded-r-none">
-        <button class="bg-primary-500 text-white px-6 py-3 rounded-full sm:rounded-l-none hover:bg-primary-600 transition-colors">
-            Subscribe
-        </button>
-    </div>
-    <p class="text-gray-500 text-sm mt-4">
-        By subscribing, you agree to our Privacy Policy and Terms of Service.
-    </p>
-</div>
-</div>
-</div>
-</div>
-<div class="absolute inset-0 opacity-10">
-<div class="absolute right-0 top-0 h-64 w-64 rounded-full bg-white transform translate-x-1/2 -translate-y-1/2"></div>
-<div class="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-white transform -translate-x-1/2 translate-y-1/2"></div>
-</div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-gray-900 text-white py-16">
-<div class="container mx-auto px-4">
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-<div>
-<div class="flex items-center space-x-2 mb-6">
-    <span class="text-3xl text-primary-400">
-        <i class="fas fa-leaf"></i>
-    </span>
-    <h2 class="text-2xl font-bold text-white">FOODBAR</h2>
-</div>
-<p class="text-gray-400 mb-6">
-    Delicious, nutritious meals delivered to your door. Made with fresh, organic ingredients.
-</p>
-<div class="flex space-x-4">
-    <a href="#" class="text-gray-400 hover:text-white transition-colors">
-        <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="#" class="text-gray-400 hover:text-white transition-colors">
-        <i class="fab fa-twitter"></i>
-    </a>
-    <a href="#" class="text-gray-400 hover:text-white transition-colors">
-        <i class="fab fa-instagram"></i>
-    </a>
-    <a href="#" class="text-gray-400 hover:text-white transition-colors">
-        <i class="fab fa-pinterest"></i>
-    </a>
-</div>
-</div>
-
-<div>
-<h3 class="text-lg font-semibold mb-6">Quick Links</h3>
-<ul class="space-y-4">
-    <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-    <li><a href="#menu" class="text-gray-400 hover:text-white transition-colors">Menu</a></li>
-    <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-    <li><a href="#how-it-works" class="text-gray-400 hover:text-white transition-colors">How It Works</a></li>
-    <li><a href="#faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
-</ul>
-</div>
-
-<div>
-<h3 class="text-lg font-semibold mb-6">Contact Us</h3>
-<ul class="space-y-4">
-    <li class="flex items-start space-x-3">
-        <i class="fas fa-map-marker-alt text-primary-400 mt-1"></i>
-        <span class="text-gray-400">123 Nutrition Ave, Healthy City, HC 12345</span>
-    </li>
-    <li class="flex items-center space-x-3">
-        <i class="fas fa-phone text-primary-400"></i>
-        <span class="text-gray-400">(123) 456-7890</span>
-    </li>
-    <li class="flex items-center space-x-3">
-        <i class="fas fa-envelope text-primary-400"></i>
-        <span class="text-gray-400">info@foodbar.com</span>
-    </li>
-</ul>
-</div>
-
-<div>
-<h3 class="text-lg font-semibold mb-6">Opening Hours</h3>
-<ul class="space-y-4">
-    <li class="flex justify-between">
-        <span class="text-gray-400">Monday - Friday</span>
-        <span class="text-gray-400">8:00 AM - 8:00 PM</span>
-    </li>
-    <li class="flex justify-between">
-        <span class="text-gray-400">Saturday</span>
-        <span class="text-gray-400">9:00 AM - 7:00 PM</span>
-    </li>
-    <li class="flex justify-between">
-        <span class="text-gray-400">Sunday</span>
-        <span class="text-gray-400">Closed</span>
-    </li>
-</ul>
-</div>
-</div>
-
-<div class="border-t border-gray-800 mt-12 pt-8">
-<div class="flex flex-col md:flex-row md:justify-between items-center">
-<p class="text-gray-400 mb-4 md:mb-0">© 2025 FoodBar. All rights reserved.</p>
-<div class="flex space-x-6">
-    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
-    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
-    <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Cookie Policy</a>
-</div>
-</div>
-</div>
-</div>
-</footer>
-
-<script>
-// Mobile menu functionality
-const mobileMenuBtn = document.getElementById('mobile-menu-button');
-const mobileMenuCloseBtn = document.getElementById('mobile-menu-close');
-const mobileMenu = document.getElementById('mobile-menu');
-
-mobileMenuBtn.addEventListener('click', () => {
-mobileMenu.classList.add('active');
-});
-
-mobileMenuCloseBtn.addEventListener('click', () => {
-mobileMenu.classList.remove('active');
-});
-
-// FAQ accordion functionality
-const faqItems = document.querySelectorAll('#faq .flex.justify-between');
-
-faqItems.forEach(item => {
-item.addEventListener('click', () => {
-const content = item.nextElementSibling;
-const icon = item.querySelector('i');
-
-if (content.classList.contains('hidden')) {
-content.classList.remove('hidden');
-icon.classList.remove('fa-plus');
-icon.classList.add('fa-minus');
-} else {
-content.classList.add('hidden');
-icon.classList.remove('fa-minus');
-icon.classList.add('fa-plus');
-}
-});
-});
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-
-const target = document.querySelector(this.getAttribute('href'));
-if (target) {
-window.scrollTo({
-    top: target.offsetTop - 80,
-    behavior: 'smooth'
-});
-
-// Close mobile menu if open
-mobileMenu.classList.remove('active');
-}
-});
-});
-</script>
-</body>
-</html>
+                <!-- Menu Item 5 -->
+                <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow menu-item">
+                    <div class="relative mb-4 overflow-hidden rounded-lg">
+                        <div class="bg-gray-200 h-48 rounded-lg menu-img flex items-center justify-center">
+                            <span class="text-gray-400">Buddha Bowl Image</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="text-xl font-semibold">Mediterranean Buddha Bowl</h4>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <span class="text-gray-700 ml-1">4.9</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Chickpeas, cucumber, tomato, feta, olives, hummus, mixed greens, tzatziki</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-2xl font-bold text-primary-600">$11.99</span>
+                        </div>
+                        <button class="bg-primary-500 text-white p-3 rounded-full hover:bg-primary-600 transition-colors">
+                            <i class="fas fa-plus"></i>
